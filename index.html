@@ -1,135 +1,87 @@
-<!-- ================================
- KIPÃO – FRONT-END 99% SENIOR
- Estrutura premium, escalável e performática
-================================ -->
-
-<!-- ================================
-📁 ESTRUTURA DE PASTAS
-================================
-/
-├── index.html
-├── manifest.json
-├── service-worker.js
-│
-├── assets/
-│   ├── images/        (banners, produtos, background hero)
-│   ├── icons/         (favicon, pwa icons)
-│   └── fonts/
-│
-├── css/
-│   ├── base/
-│   │   ├── reset.css
-│   │   ├── variables.css
-│   │   └── typography.css
-│   ├── components.css
-│   ├── animations.css
-│   ├── scroll-effects.css
-│   └── style.css
-│
-├── js/
-│   ├── utils/
-│   │   ├── debounce.js
-│   │   └── helpers.js
-│   ├── modules/
-│   │   ├── modal.js
-│   │   ├── menu.js
-│   │   ├── status-open.js
-│   │   └── magnetic.js
-│   ├── scroll-effects.js
-│   └── main.js
-│
-├── data/
-│   └── products.json
-│
-└── seo/
-    ├── sitemap.xml
-    └── robots.txt
-================================ -->
-
-<!-- ================================
-📄 index.html (BASE LIMPA)
-================================ -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Padaria Ki Pão</title>
+  <meta name="description" content="Padaria Ki Pão – Forno aceso, tradição e sabor todos os dias" />
 
-  <!-- SEO -->
-  <meta name="description" content="Padaria Ki Pão – tradição, sabor e qualidade todos os dias." />
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/base/reset.css" />
-  <link rel="stylesheet" href="css/base/variables.css" />
-  <link rel="stylesheet" href="css/base/typography.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/animations.css" />
-  <link rel="stylesheet" href="css/scroll-effects.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <!-- BASE PARA GITHUB PAGES -->
+  <base href="/kipaoo/">
 
   <!-- PWA -->
-  <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="manifest.json">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base/reset.css">
+  <link rel="stylesheet" href="css/base/variables.css">
+  <link rel="stylesheet" href="css/base/typography.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/scroll-effects.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<!-- LOADER / SKELETON -->
-<div id="loader">
-  <div class="skeleton-logo"></div>
-</div>
-
-<!-- HERO PARALLAX -->
-<header class="hero parallax">
-  <div class="overlay"></div>
-  <h1>Padaria Ki Pão</h1>
-  <p>Forno aceso, tradição e sabor todos os dias</p>
-
-  <div class="cta-group">
-    <button class="btn magnetic" data-whatsapp>WhatsApp</button>
-    <button class="btn magnetic" data-menu>Ver Cardápio</button>
-    <button class="btn magnetic" data-map>Como Chegar</button>
+  <!-- LOADER / SKELETON -->
+  <div id="loader">
+    <div class="skeleton-logo"></div>
   </div>
-</header>
 
-<!-- STATUS -->
-<section class="status">
-  <span id="open-status"></span>
-</section>
+  <!-- HERO -->
+  <header class="hero parallax">
+    <div class="overlay"></div>
 
-<!-- CARDÁPIO -->
-<section id="menu" class="reveal">
-  <h2>Nossos Produtos</h2>
-  <div class="menu-grid" id="menuGrid"></div>
-</section>
+    <h1>Padaria Ki Pão</h1>
+    <p>Forno aceso, tradição e sabor todos os dias</p>
 
-<!-- MODAL -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <button class="close">×</button>
-    <h3 id="modalTitle"></h3>
-    <button class="btn magnetic" id="modalWhats">Pedir no WhatsApp</button>
+    <div class="cta-group">
+      <button class="btn magnetic" data-whatsapp>WhatsApp</button>
+      <button class="btn magnetic" data-menu>Ver Cardápio</button>
+      <button class="btn magnetic" data-map>Como Chegar</button>
+    </div>
+  </header>
+
+  <!-- STATUS -->
+  <section class="status">
+    <span id="open-status"></span>
+  </section>
+
+  <!-- CARDÁPIO -->
+  <section id="menu" class="reveal">
+    <h2>Nossos Produtos</h2>
+    <div class="menu-grid" id="menuGrid"></div>
+  </section>
+
+  <!-- MODAL PRODUTO -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button class="close">×</button>
+      <h3 id="modalTitle"></h3>
+      <button class="btn magnetic" id="modalWhats">
+        Pedir no WhatsApp
+      </button>
+    </div>
   </div>
-</div>
 
-<!-- BOTÃO FLUTUANTE -->
-<a class="whatsapp-float magnetic" href="https://wa.me/5518996955697" target="_blank">💬</a>
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a
+    href="https://wa.me/5518996955697"
+    target="_blank"
+    class="whatsapp-float magnetic"
+    aria-label="WhatsApp"
+  >
+    💬
+  </a>
 
-<!-- JS -->
-<script src="js/main.js"></script>
-<script src="js/scroll-effects.js"></script>
-<script src="js/modules/modal.js"></script>
-<script src="js/modules/status-open.js"></script>
-<script src="js/modules/magnetic.js"></script>
+  <!-- JS -->
+  <script src="js/main.js"></script>
+  <script src="js/scroll-effects.js"></script>
+  <script src="js/modules/modal.js"></script>
+  <script src="js/modules/status-open.js"></script>
+  <script src="js/modules/magnetic.js"></script>
+
 </body>
 </html>
-
-<!-- ================================
-🧠 PRINCÍPIOS SENIOR APLICADOS
-================================
-✔ Separação de responsabilidades
-✔ Performance first
-✔ UX emocional
-✔ Escalável para franquia
-✔ Lighthouse friendly
-✔ Código legível para equipe grande
-================================ -->
